@@ -1,4 +1,9 @@
-var BookInstance = require('../models/bookinstance');
+var BookInstance = require('../models/bookinstance')
+var Book = require('../models/book')
+var async = require('async')
+
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
 
 // Display list of all BookInstances.
 exports.bookinstance_list = function(req, res, next) {

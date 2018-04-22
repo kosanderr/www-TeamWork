@@ -2,10 +2,10 @@ var Genre = require('../models/genre');
 var Book = require('../models/book');
 var async = require('async');
 
-// Display list of all Genre.
-//exports.genre_list = function(req, res) {
-   // res.send('NOT IMPLEMENTED: Genre list');
-//}; //Ryssivä alla, muokattu authorcontrollerista
+
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
+
 exports.genre_list = function(req, res, next) {
 
   Genre.find()

@@ -2,6 +2,9 @@ var Author = require('../models/author');
 var async = require('async');
 var Book = require('../models/book');
 
+const { body, validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
+
 // Display list of all Authors.
 exports.author_list = function(req, res, next) {
 
